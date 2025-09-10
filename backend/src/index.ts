@@ -13,6 +13,9 @@ app.use(express.json());
 import healthRouter from "./routes/health";
 app.use("/api/health", healthRouter);
 
+import pokemonRouter from "./routes/pokemon";
+app.use("/api/pokemon", pokemonRouter);
+
 // Route par défaut (fallback)
 app.get("/", (req: Request, res: Response) => {
   res.send("Bienvenue sur l'API Pokédex 🚀");
