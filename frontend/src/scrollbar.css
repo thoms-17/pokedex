@@ -1,0 +1,38 @@
+/* Scrollbar : zone présente, indicateur caché (état repos) */
+.scrollbar-auto {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: transparent transparent;
+}
+
+.scrollbar-auto::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-auto::-webkit-scrollbar-thumb {
+  background-color: transparent; /* pouce invisible au repos */
+}
+
+/* Scrollbar : indicateur visible (pendant le scroll) */
+.scrollbar-visible::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-visible::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-visible::-webkit-scrollbar-thumb {
+  background-color: red;
+  border-radius: 9999px;
+}
+
+.scrollbar-visible {
+  scrollbar-width: thin;
+  scrollbar-color: red transparent;
+}
