@@ -1,6 +1,6 @@
 import { useRef, useState } from "react"
 
-function PokemonList({ searchTerm, onSearchChange,filteredPokemon, isLoadingList, listError, onSelectPokemon }) {
+function PokemonList({ searchTerm, onSearchChange, filteredPokemon, isLoadingList, listError, onSelectPokemon }) {
   const scrollRef = useRef(null);
   const [isScrolling, setIsScrolling] = useState(false);
   const scrollTimeout = useRef(null);
@@ -36,7 +36,7 @@ function PokemonList({ searchTerm, onSearchChange,filteredPokemon, isLoadingList
         ref={scrollRef}
         onScroll={handleScroll}
         className={`
-          max-h-[480px]
+          max-h-[240px] md:max-h-[480px]
           rounded-2xl
           bg-red-50
           border border-red-200

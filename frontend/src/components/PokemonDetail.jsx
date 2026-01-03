@@ -115,7 +115,7 @@ function PokemonDetail({ selectedPokemon, isLoadingDetail, detailError }) {
                       <div key={key} className="flex items-center gap-2 text-xs text-slate-800">
                         <span className="w-28 truncate">{meta.label}</span>
                         <span className="w-10 text-right font-mono">{value}</span>
-                        <div className="flex-1 h-1.5 rounded-full bg-red-100 overflow-hidden">
+                        <div className="hidden md:block flex-1 h-1.5 rounded-full bg-red-100 overflow-hidden">
                           <div
                             className={`${meta.color} h-full rounded-full`}
                             style={{ width }}
