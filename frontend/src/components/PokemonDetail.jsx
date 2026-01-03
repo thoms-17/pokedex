@@ -30,12 +30,12 @@ const STAT_META = {
 
 function PokemonDetail({ selectedPokemon, isLoadingDetail, detailError }) {
   return (
-    <div className="h-full rounded-2xl bg-white border border-red-300 p-4 flex flex-col">
+    <div className="h-full rounded-2xl bg-white border border-red-300 p-4 flex flex-col overflow-hidden">
       <h2 className="text-lg font-semibold mb-3 text-red-900">Détail du Pokémon</h2>
 
       {detailError && <p className="text-red-600 text-sm mb-2 font-medium">{detailError}</p>}
 
-      <div className="flex-1 flex mt-2">
+      <div className="flex-1 mt-2 overflow-y-auto">
         {selectedPokemon && !detailError && (
           <div
             className={`grid grid-cols-1 lg:grid-cols-12 gap-6 items-center flex-1 ${

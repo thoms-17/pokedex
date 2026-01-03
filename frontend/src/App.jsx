@@ -3,6 +3,10 @@ import Navbar from "./components/Navbar";
 import PokemonList from "./components/PokemonList";
 import PokemonDetail from "./components/PokemonDetail";
 
+const API_BASE_URL = import.meta.env.DEV
+  ? "http://localhost:3001"
+  : "https://pokedex-gaxb.onrender.com";
+
 function App() {
   // État pour la recherche (barre en haut)
   const [searchTerm, setSearchTerm] = useState("");
@@ -24,7 +28,7 @@ function App() {
         setIsLoadingList(true);
         setListError(null);
 
-        const response = await fetch("http://localhost:3001/api/pokemon-list");
+        const response = await fetch(`${API_BASE_URL}/api/pokemon-list`);
 
         if (!response.ok) {
           throw new Error("Impossible de récupérer la liste des Pokémon");
@@ -51,7 +55,7 @@ function App() {
       setDetailError(null);
 
       const response = await fetch(
-        `http://localhost:3001/api/pokemon/${String(identifier).toLowerCase()}`
+        `${API_BASE_URL}/api/pokemon/${String(identifier).toLowerCase()}`
       );
 
       if (!response.ok) {
@@ -87,7 +91,7 @@ function App() {
 
       <main className="flex-1 max-w-6xl mx-auto px-4 py-6">
         <section className="bg-white/95 border border-red-600 rounded-3xl p-4 md:p-6 shadow-xl shadow-red-900/40">
-          <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.2fr)_minmax(0,2fr)] gap-4 md:gap-6 h-[520px]">
+          <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.2fr)_minmax(0,2fr)] gap-4 md:gap-6 h-auto md:h-[520px]">
             <PokemonList
               searchTerm={searchTerm}
               onSearchChange={setSearchTerm}

@@ -62,6 +62,10 @@ cd backend
 npm run dev
 ```
 
+En développement, le frontend appelle automatiquement l’API sur
+`http://localhost:3001` ; en production (GitHub Pages), il utilise
+l’URL Render du backend.
+
 Dans un second terminal (frontend) :
 
 ```bash
